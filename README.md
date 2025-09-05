@@ -16,22 +16,7 @@ AI-powered Digital Twin (RAG) Assistant: Gain an unfair advantage. Our advanced 
 Open-Source & Community-Driven: Join a transparent, continuously improving platform. Our open-source model ensures flexibility, customization, and a supportive community.
 
 💻 Tech Stack
-Nextmile is built on a modern, robust foundation, ensuring a seamless and high-performance user experience.
-
-Frontend:
-
-React: A component-based JavaScript library for building intuitive UIs.
-
-Next.js: A powerful React framework enabling optimal performance with server-side rendering and static site generation.
-
-Backend:
-
-Node.js: A fast, scalable JavaScript runtime.
-
-Database:
-
-MongoDB: A high-performance NoSQL database built for scalability.
-
-AI/ML:
-
-Python: The core language for developing our advanced AI and Machine Learning models, including the RAG digital twin.
+Frontend: React, Next.js
+Backend: Node.js
+Database: MongoDB
+AI/ML: Python
