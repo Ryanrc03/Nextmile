@@ -5,10 +5,6 @@ Nextmile is an innovative open-source resume platform powered by AI. It provides
   <img src="Nextmile_logo.png" width="50%" alt="Nextmile logo"/>
 </center>
 
-<div style="text-align: center;">
-  <img src="Nextmile_logo.png" width="50%" alt="Nextmile logo" />
-</div>
-
 
 ✨ Key Features
 Personal Portfolio Pages: Go beyond a static resume. Create a dynamic online presence that highlights your projects, skills, and unique personality.
