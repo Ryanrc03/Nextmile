@@ -1,7 +1,7 @@
 # Nextmile: Your AI-Powered Career Assistant 🚀
 Nextmile is an innovative open-source resume platform powered by AI. It provides a range of services for job seekers, including personal portfolio pages, interactive resume displays, and a digital twin (RAG) assistant to help them stand out from the crowd.
 
-![Nextmile logo](Nextmile_logo.png
+![Nextmile logo](Nextmile_logo.png)
 
 ✨ Key Features
 Personal Portfolio Pages: Go beyond a static resume. Create a dynamic online presence that highlights your projects, skills, and unique personality.
