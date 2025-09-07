@@ -3,6 +3,9 @@
 Resume RAG QA System
 Intelligent Q&A system based on XLSX files using DeepSeek-V3.1 model
 """
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 import pandas as pd
 import numpy as np
@@ -427,18 +430,55 @@ def batch_test():
         
         input("\nPress Enter to continue to next question...")
 
+# FastAPI app initialization
+app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 允许所有来源，生产环境中应该指定具体的前端URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Pydantic model for request body
+class Message(BaseModel):
+    text: str
+
+# Initialize ResumeRAGSystem
+rag_system = ResumeRAGSystem()
+
+@app.post("/chat")
+async def chat(message: Message):
+    """
+    Chat endpoint for querying the Resume RAG system.
+    """
+    try:
+        # Use the query method from ResumeRAGSystem
+        response = rag_system.query(message.text, stream=False)
+        return {"reply": response}
+    except Exception as e:
+        return {"error": str(e)}
+
 if __name__ == "__main__":
     import sys
+    import uvicorn
     
     if len(sys.argv) > 1:
         if sys.argv[1] == "test":
             batch_test()
         elif sys.argv[1] == "help":
             show_help()
+        elif sys.argv[1] == "interactive":
+            main()
         else:
             print("Usage:")
-            print("  python script.py        # Interactive mode")
-            print("  python script.py test   # Batch testing")
-            print("  python script.py help   # Show help")
+            print("  python script.py                # Start FastAPI server")
+            print("  python script.py interactive    # Interactive mode")
+            print("  python script.py test          # Batch testing")
+            print("  python script.py help          # Show help")
     else:
-        main()
+        # Start FastAPI server by default
+        print("🚀 Starting FastAPI server...")
+        uvicorn.run(app, host="0.0.0.0", port=8000)

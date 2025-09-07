@@ -8,6 +8,9 @@ import Footer from "./components/footer";
 import { ThemeProvider } from "./components/theme-switch";
 import { metaData } from "./lib/config";
 
+import "./globals.css";
+import Chatbot from "../components/chatbot";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -88,6 +91,7 @@ export default function RootLayout({
             <SpeedInsights />
           </main>
         </ThemeProvider>
+        <Chatbot />
       </body>
     </html>
   );
