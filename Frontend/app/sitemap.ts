@@ -7,7 +7,7 @@ const BaseUrl = metaData.baseUrl.endsWith("/")
   : `${metaData.baseUrl}/`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  let routes = ["", "Projects", "photos"].map((route) => ({
+  let routes = ["", "Projects"].map((route) => ({
     url: `${BaseUrl}${route}`,
     lastModified: new Date().toISOString().split("T")[0],
   }));
