@@ -12,7 +12,10 @@ import numpy as np
 from typing import List, Dict, Any, Optional
 import os
 import re
+import time
+import uuid
 from openai import OpenAI
+from db_config import db_handler
 
 class ResumeRAGSystem:
     def __init__(self, xlsx_path: str = None):
@@ -445,20 +448,123 @@ app.add_middleware(
 # Pydantic model for request body
 class Message(BaseModel):
     text: str
+    session_id: Optional[str] = None
+    user_id: Optional[str] = None
 
 # Initialize ResumeRAGSystem
 rag_system = ResumeRAGSystem()
+
+# Include admin API routes
+try:
+    from admin_api import router as admin_router
+    app.include_router(admin_router)
+    print("✅ Admin API routes loaded successfully")
+except ImportError as e:
+    print(f"⚠️ Warning: Could not load admin API routes: {e}")
+
+@app.get("/")
+async def root():
+    """
+    Root endpoint - API welcome message
+    """
+    return {
+        "message": "Welcome to Nextmile Resume RAG Chatbot API",
+        "version": "1.0.0",
+        "endpoints": {
+            "chat": "POST /chat - Send a message to the chatbot",
+            "history": "GET /history/{session_id} - Get conversation history",
+            "health": "GET /health - Check API health"
+        }
+    }
+
+@app.get("/health")
+async def health():
+    """
+    Health check endpoint
+    """
+    try:
+        # Test database connection
+        db_status = "connected" if db_handler.client.admin.command('ping') else "disconnected"
+    except:
+        db_status = "disconnected"
+    
+    return {
+        "status": "healthy",
+        "database": db_status,
+        "timestamp": time.time()
+    }
+
+@app.get("/history/{session_id}")
+async def get_conversation_history(session_id: str, limit: int = 10):
+    """
+    Get conversation history for a session
+    """
+    try:
+        history = db_handler.get_conversation_history(session_id, limit)
+        # Convert ObjectId to string for JSON serialization
+        for conv in history:
+            conv["_id"] = str(conv["_id"])
+            conv["timestamp"] = conv["timestamp"].isoformat()
+        
+        return {
+            "session_id": session_id,
+            "history": history,
+            "count": len(history)
+        }
+    except Exception as e:
+        return {"error": str(e)}
 
 @app.post("/chat")
 async def chat(message: Message):
     """
     Chat endpoint for querying the Resume RAG system.
     """
+    start_time = time.time()
+    session_id = message.session_id or str(uuid.uuid4())
+    
     try:
         # Use the query method from ResumeRAGSystem
         response = rag_system.query(message.text, stream=False)
-        return {"reply": response}
+        
+        # 计算响应时间
+        response_time = time.time() - start_time
+        
+        # 保存对话到MongoDB
+        conversation_id = await db_handler.save_conversation_async(
+            user_query=message.text,
+            bot_response=response,
+            session_id=session_id,
+            user_id=message.user_id,
+            response_time=response_time,
+            model_used="DeepSeek-V3.1"
+        )
+        
+        print(f"💾 Conversation saved to MongoDB with ID: {conversation_id}")
+        
+        return {
+            "reply": response,
+            "session_id": session_id,
+            "conversation_id": conversation_id,
+            "response_time": response_time
+        }
+        
     except Exception as e:
+        # 错误情况也记录到数据库
+        error_response = f"Error: {str(e)}"
+        response_time = time.time() - start_time
+        
+        try:
+            await db_handler.save_conversation_async(
+                user_query=message.text,
+                bot_response=error_response,
+                session_id=session_id,
+                user_id=message.user_id,
+                response_time=response_time,
+                model_used="error"
+            )
+        except Exception as db_error:
+            print(f"Failed to save error to database: {db_error}")
+        
         return {"error": str(e)}
 
 if __name__ == "__main__":
