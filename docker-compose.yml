@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  chatbot:
+    build:
+      context: ./chatbot
+    container_name: chatbot_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chatbot:/app
+    restart: always
+
+  frontend:
+    build:
+      context: ./Frontend
+    container_name: frontend_service
+    ports:
+      - "3000:3000"
+    restart: always
