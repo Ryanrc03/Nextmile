@@ -89,11 +89,11 @@ export default async function Blog({ params }) {
       />
       <h1 className="title mb-3 font-medium text-2xl">{post.metadata.title}</h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-medium">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm text-neutral-600">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+      <article className="prose prose-quoteless prose-neutral">
         <CustomMDX source={post.content} />
       </article>
     </section>

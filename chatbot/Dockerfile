@@ -16,5 +16,5 @@ COPY . .
 # 暴露应用端口
 EXPOSE 8000
 
-# 启动命令
-CMD ["uvicorn", "rag_en:app", "--host", "0.0.0.0", "--port", "8000"]
+# 启动命令 - 使用新的API服务器
+CMD ["python", "api_server.py"]

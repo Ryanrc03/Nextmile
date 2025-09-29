@@ -30,10 +30,10 @@ export default function BlogPosts() {
               href={`/blog/${post.slug}`}
             >
               <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
-                <h2 className="text-black dark:text-white">
+                <h2 className="text-black">
                   {post.metadata.title}
                 </h2>
-                <p className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                <p className="text-neutral-600 tabular-nums text-sm">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
               </div>

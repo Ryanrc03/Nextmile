@@ -18,8 +18,8 @@ export default function Projects() {
           >
             <div className="w-full flex flex-col space-y-2">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-                <h2 className="text-black dark:text-white font-semibold">{experience.position}</h2>
-                <span className="text-sm text-neutral-500 dark:text-neutral-400">{experience.company}</span>
+                <h2 className="text-black font-semibold">{experience.position}</h2>
+                <span className="text-sm text-neutral-500">{experience.company}</span>
               </div>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                 {experience.description}
@@ -27,10 +27,13 @@ export default function Projects() {
               <p className="text-neutral-500 dark:text-neutral-500 text-xs">
                 <strong>Duration:</strong> {experience.duration}
               </p>
-              <p className="text-neutral-500 dark:text-neutral-500 text-xs">
-                <strong>Location:</strong> {experience.location}
+              <p className="text-neutral-600 text-sm">
+                {experience.duration}
               </p>
-              <ul className="text-neutral-600 dark:text-neutral-400 text-sm list-disc list-inside">
+              <p className="text-neutral-500 text-xs">
+                {experience.location}
+              </p>
+              <ul className="text-neutral-600 text-sm list-disc list-inside">
                 {experience.achievements.map((achievement, idx) => (
                   <li key={idx}>{achievement}</li>
                 ))}

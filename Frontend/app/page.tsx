@@ -16,7 +16,7 @@ export default function Page() {
         />
       </a>
       <h1 className="mb-8 text-2xl font-medium">Ryan`s Portfolio</h1>
-      <div className="prose prose-neutral dark:prose-invert">
+      <div className="prose prose-neutral">
         <p>
           My name is Ryan Li, I am a Computer Science Master's student at the Rice University.
         </p>

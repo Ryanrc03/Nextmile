@@ -14,7 +14,7 @@ A clean, fast, and lightweight portfolio template built with [Next.js](https://n
 ## Features
 
 - **[MDX](https://mdxjs.com/) Support**: Use Markdown with JSX components for blog posts.
-- **Light and Dark Mode Toggle**: Switch between themes for better readability.
+- **Clean Design**: Simple and elegant light theme for better readability.
 - **Dynamic [OG Images](https://vercel.com/docs/functions/og-image-generation)**: Auto-generate Open Graph images for sharing.
 - **SEO Optimization**: Enhance search visibility with sitemap, robots.txt, and JSON-LD schema.
 - **Dynamic Feed Generation**: Automatic dynamic [RSS](https://nextfolio-template.vercel.app/rss.xml), [Atom](https://nextfolio-template.vercel.app/atom.xml), and [JSON](https://nextfolio-template.vercel.app/feed.json) feeds.

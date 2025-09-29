@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # 只启动MongoDB - chatbot调试所需的最小依赖
+  mongodb:
+    image: mongo:6.0
+    container_name: nextmile_mongodb_debug
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongodb_debug_data:/data/db
+    networks:
+      - nextmile_debug_network
+
+  # 可选：数据库管理界面
+  mongo-express:
+    image: mongo-express:latest
+    container_name: nextmile_mongo_express_debug
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+      ME_CONFIG_MONGODB_URL: mongodb://admin:password@mongodb:27017/
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: admin123
+    depends_on:
+      - mongodb
+    networks:
+      - nextmile_debug_network
+    profiles:
+      - debug-full  # 使用profile控制是否启动
+
+  # Chatbot服务 - 用于调试
+  chatbot-debug:
+    build: 
+      context: ./chatbot
+      dockerfile: Dockerfile.debug
+    container_name: nextmile_chatbot_debug
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://admin:password@mongodb:27017/nextmile_chatbot?authSource=admin
+      - DEBUG_MODE=true
+      - LOG_LEVEL=DEBUG
+    depends_on:
+      - mongodb
+    networks:
+      - nextmile_debug_network
+    volumes:
+      # 挂载代码目录，支持实时代码修改
+      - ./chatbot:/app
+      # 挂载调试配置
+      - ./debug_config.py:/app/debug_config.py
+    command: python api_server.py
+    profiles:
+      - debug-api  # 使用profile控制
+
+volumes:
+  mongodb_debug_data:
+
+networks:
+  nextmile_debug_network:
+    driver: bridge
