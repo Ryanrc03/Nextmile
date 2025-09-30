@@ -17,28 +17,13 @@ export default function AboutPage() {
             {/* Left Content */}
             <div className="space-y-6">
               <p className="text-gray-300 text-lg leading-relaxed">
-                I'm Creative Director and UI/UX Designer from Coimbatore, India, currently pursuing 
-                a Master's degree in Computer Science at Rice University. I enjoy turning complex problems 
-                into simple, beautiful and intuitive designs.
+                My academic journey began in China, leading me to complete my undergraduate degree in Computer Science at <span className="font-bold text-white">Hong Kong Baptist University</span>. 
+                
               </p>
-              
+
               <p className="text-gray-300 text-lg leading-relaxed">
-                My job is to design applications that are functional and user-friendly while maintaining 
-                an attractive appearance. Moreover, I add personal touches to your product and make sure 
-                that it is eye-catching and easy to use. My aim is to bring across your message and 
-                identity in the most creative way.
+                I am a Master of <span className="font-bold text-white">Computer Science</span> student at <span className="font-bold text-white">Rice University</span>, enhancing my technical expertise and professional skills to thrive in the fast-paced AI era.
               </p>
-              
-              <div className="grid grid-cols-2 gap-6 mt-8">
-                <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
-                  <h4 className="text-[#00D9FF] font-bold text-3xl mb-2">50+</h4>
-                  <p className="text-gray-400">Projects Completed</p>
-                </div>
-                <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
-                  <h4 className="text-[#00D9FF] font-bold text-3xl mb-2">3+</h4>
-                  <p className="text-gray-400">Years Experience</p>
-                </div>
-              </div>
             </div>
             
             {/* Right Content - Image */}
@@ -82,7 +67,7 @@ export default function AboutPage() {
             <div className="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700 text-center hover:border-[#00D9FF] transition-all duration-300">
               <div className="text-4xl mb-4">📊</div>
               <h3 className="text-xl font-bold text-white mb-2">Data Science</h3>
-              <p className="text-gray-400 text-sm">Data analysis, visualization, and insights</p>
+              <p className="text-gray-400 text-sm">Data mining, analysis and insights for business decision-making</p>
             </div>
             
             <div className="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700 text-center hover:border-[#00D9FF] transition-all duration-300">

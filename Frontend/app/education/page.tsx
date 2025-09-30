@@ -31,7 +31,7 @@ export default function EducationPage() {
                 </h2>
                 <div className="flex items-center space-x-4 mb-4">
                   <span className="bg-[#00D9FF] text-black px-4 py-1 rounded-full text-sm font-semibold">
-                    2024-2026
+                    Aug 2025- Dec 2026
                   </span>
                 </div>
                 <p className="text-xl text-gray-300 mb-2 font-semibold">
@@ -61,7 +61,7 @@ export default function EducationPage() {
                 </h2>
                 <div className="flex items-center space-x-4 mb-4">
                   <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    2020-2024
+                    Sep 2021- Jun 2025
                   </span>
                 </div>
                 <p className="text-xl text-gray-300 mb-2 font-semibold">
@@ -69,8 +69,7 @@ export default function EducationPage() {
                 </p>
                 <p className="text-gray-400 mb-4">
                   Comprehensive foundation in computer science fundamentals including algorithms, 
-                  data structures, software development, and system design. Graduated with honors 
-                  and strong academic performance.
+                  data structures, software development, and system design. Graduated with First class honor.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-[#2a2a2a] text-[#00D9FF] px-3 py-1 rounded-full text-sm">Algorithms</span>
@@ -153,62 +152,62 @@ export default function EducationPage() {
       </section>
 
       {/* Skills & Technologies */}
-      <section className="py-20 px-8 lg:px-16">
+      {/* <section className="py-20 px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">
             Technical <span className="text-[#00D9FF]">Skills</span>
-          </h2>
+          </h2> */}
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Programming Languages */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
+            {/* <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
               <h3 className="text-xl font-bold text-[#00D9FF] mb-4">Programming Languages</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-white">Python</span>
                   <div className="w-24 bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full w-[90%]"></div>
+                    <div className="bg-[#00D9FF] h-2 rounded-full w-[98%]"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-white">JavaScript</span>
-                  <div className="w-24 bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full w-[85%]"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white">Java</span>
+                  <span className="text-white">JavaScript/TypeScript</span>
                   <div className="w-24 bg-gray-700 rounded-full h-2">
                     <div className="bg-[#00D9FF] h-2 rounded-full w-[80%]"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-white">C++</span>
+                  <span className="text-white">C/C++</span>
                   <div className="w-24 bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full w-[75%]"></div>
+                    <div className="bg-[#00D9FF] h-2 rounded-full w-[70%]"></div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white">Latex</span>
+                  <div className="w-24 bg-gray-700 rounded-full h-2">
+                    <div className="bg-[#00D9FF] h-2 rounded-full w-[90%]"></div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */} 
 
             {/* Frameworks & Tools */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
+            {/* <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
               <h3 className="text-xl font-bold text-[#00D9FF] mb-4">Frameworks & Tools</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
+                  <span className="text-white">PyTorch</span>
+                  <div className="w-24 bg-gray-700 rounded-full h-2">
+                    <div className="bg-[#00D9FF] h-2 rounded-full w-[95%]"></div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
                   <span className="text-white">React/Next.js</span>
                   <div className="w-24 bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full w-[88%]"></div>
+                    <div className="bg-[#00D9FF] h-2 rounded-full w-[70%]"></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-white">TensorFlow</span>
-                  <div className="w-24 bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full w-[82%]"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white">PyTorch</span>
+                  <span className="text-white"></span>
                   <div className="w-24 bg-gray-700 rounded-full h-2">
                     <div className="bg-[#00D9FF] h-2 rounded-full w-[80%]"></div>
                   </div>
@@ -216,14 +215,14 @@ export default function EducationPage() {
                 <div className="flex justify-between items-center">
                   <span className="text-white">Docker</span>
                   <div className="w-24 bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full w-[78%]"></div>
+                    <div className="bg-[#00D9FF] h-2 rounded-full w-[50%]"></div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Design Tools */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
+            {/* <div className="bg-[#1a1a1a] p-6 rounded-xl border border-gray-800">
               <h3 className="text-xl font-bold text-[#00D9FF] mb-4">Design Tools</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
@@ -254,7 +253,7 @@ export default function EducationPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Academic Achievements */}
       <section className="py-20 px-8 lg:px-16 bg-[#1a1a1a]">
@@ -266,13 +265,13 @@ export default function EducationPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700 text-center">
               <div className="text-4xl mb-4">🎓</div>
-              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">3.8+</h3>
+              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">90%+</h3>
               <p className="text-gray-400">Current GPA</p>
             </div>
             
             <div className="bg-[#2a2a2a] p-6 rounded-xl border border-gray-700 text-center">
               <div className="text-4xl mb-4">📚</div>
-              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">25+</h3>
+              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">30+</h3>
               <p className="text-gray-400">Courses Completed</p>
             </div>
             

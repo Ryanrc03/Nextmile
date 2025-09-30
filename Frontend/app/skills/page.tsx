@@ -24,7 +24,7 @@ export default function SkillsPage() {
               {/* Application designing */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-white text-lg font-medium">Application designing</span>
+                  <span className="text-white text-lg font-medium">AI/ML Development & Optimization</span>
                   <span className="text-[#00D9FF] font-bold">90%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-3">
@@ -35,33 +35,33 @@ export default function SkillsPage() {
               {/* Figma software */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-white text-lg font-medium">Figma software</span>
-                  <span className="text-[#00D9FF] font-bold">100%</span>
+                  <span className="text-white text-lg font-medium">Software Development</span>
+                  <span className="text-[#00D9FF] font-bold">85%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-3">
-                  <div className="bg-gradient-to-r from-[#A0D911] to-[#52C41A] h-3 rounded-full transition-all duration-1000 ease-out" style={{width: '100%'}}></div>
+                  <div className="bg-gradient-to-r from-[#A0D911] to-[#52C41A] h-3 rounded-full transition-all duration-1000 ease-out" style={{width: '85%'}}></div>
                 </div>
               </div>
 
               {/* Website design */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-white text-lg font-medium">Website design</span>
-                  <span className="text-[#00D9FF] font-bold">90%</span>
+                  <span className="text-white text-lg font-medium">Data Analysis</span>
+                  <span className="text-[#00D9FF] font-bold">80%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-3">
-                  <div className="bg-gradient-to-r from-[#A0D911] to-[#52C41A] h-3 rounded-full transition-all duration-1000 ease-out" style={{width: '90%'}}></div>
+                  <div className="bg-gradient-to-r from-[#A0D911] to-[#52C41A] h-3 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
                 </div>
               </div>
 
               {/* UX writing */}
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-white text-lg font-medium">UX writing</span>
-                  <span className="text-[#00D9FF] font-bold">50%</span>
+                  <span className="text-white text-lg font-medium">Research</span>
+                  <span className="text-[#00D9FF] font-bold">80%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-3">
-                  <div className="bg-gradient-to-r from-[#A0D911] to-[#52C41A] h-3 rounded-full transition-all duration-1000 ease-out" style={{width: '50%'}}></div>
+                  <div className="bg-gradient-to-r from-[#A0D911] to-[#52C41A] h-3 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
                 </div>
               </div>
 
@@ -82,11 +82,11 @@ export default function SkillsPage() {
             
             {/* Programming Languages */}
             <div className="bg-[#1a1a1a] p-8 rounded-xl border border-gray-700 hover:border-[#00D9FF] transition-all duration-300">
-              <h3 className="text-2xl font-bold text-[#00D9FF] mb-6">Programming Languages</h3>
+              <h3 className="text-2xl font-bold text-[#00D9FF] mb-6">AI/ML</h3>
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Python</span>
+                    <span className="text-white font-medium">Pytorch</span>
                     <span className="text-[#00D9FF] font-bold">95%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -96,7 +96,7 @@ export default function SkillsPage() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">JavaScript</span>
+                    <span className="text-white font-medium">Numpy</span>
                     <span className="text-[#00D9FF] font-bold">88%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -106,7 +106,7 @@ export default function SkillsPage() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Java</span>
+                    <span className="text-white font-medium">Linux</span>
                     <span className="text-[#00D9FF] font-bold">82%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -116,7 +116,7 @@ export default function SkillsPage() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">C++</span>
+                    <span className="text-white font-medium">CUDA</span>
                     <span className="text-[#00D9FF] font-bold">78%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -128,7 +128,7 @@ export default function SkillsPage() {
 
             {/* Frameworks & Libraries */}
             <div className="bg-[#1a1a1a] p-8 rounded-xl border border-gray-700 hover:border-[#00D9FF] transition-all duration-300">
-              <h3 className="text-2xl font-bold text-[#00D9FF] mb-6">Frameworks & Libraries</h3>
+              <h3 className="text-2xl font-bold text-[#00D9FF] mb-6">Software Development</h3>
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
@@ -142,7 +142,7 @@ export default function SkillsPage() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">TensorFlow</span>
+                    <span className="text-white font-medium">Database</span>
                     <span className="text-[#00D9FF] font-bold">85%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -152,21 +152,21 @@ export default function SkillsPage() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">PyTorch</span>
-                    <span className="text-[#00D9FF] font-bold">82%</span>
+                    <span className="text-white font-medium">AI Copilot</span>
+                    <span className="text-[#00D9FF] font-bold">99%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '82%'}}></div>
+                    <div className="bg-[#00D9FF] h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '99%'}}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Node.js</span>
-                    <span className="text-[#00D9FF] font-bold">80%</span>
+                    <span className="text-white font-medium">Docker & Cloud Computing</span>
+                    <span className="text-[#00D9FF] font-bold">60%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
+                    <div className="bg-[#00D9FF] h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '60%'}}></div>
                   </div>
                 </div>
               </div>
@@ -174,11 +174,11 @@ export default function SkillsPage() {
 
             {/* Tools & Technologies */}
             <div className="bg-[#1a1a1a] p-8 rounded-xl border border-gray-700 hover:border-[#00D9FF] transition-all duration-300">
-              <h3 className="text-2xl font-bold text-[#00D9FF] mb-6">Tools & Technologies</h3>
+              <h3 className="text-2xl font-bold text-[#00D9FF] mb-6">Data Analysis</h3>
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Git/GitHub</span>
+                    <span className="text-white font-medium">Visualization</span>
                     <span className="text-[#00D9FF] font-bold">95%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -188,17 +188,17 @@ export default function SkillsPage() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Docker</span>
-                    <span className="text-[#00D9FF] font-bold">80%</span>
+                    <span className="text-white font-medium">Causal Inference</span>
+                    <span className="text-[#00D9FF] font-bold">60%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#00D9FF] h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '80%'}}></div>
+                    <div className="bg-[#00D9FF] h-2 rounded-full transition-all duration-1000 ease-out" style={{width: '60%'}}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">AWS/Cloud</span>
+                    <span className="text-white font-medium">AB Testing</span>
                     <span className="text-[#00D9FF] font-bold">75%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -208,7 +208,7 @@ export default function SkillsPage() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Linux/Unix</span>
+                    <span className="text-white font-medium">Statistics</span>
                     <span className="text-[#00D9FF] font-bold">85%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
@@ -283,7 +283,7 @@ export default function SkillsPage() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-white text-lg font-medium">English</span>
-                    <span className="text-[#00D9FF] font-bold">Native/Fluent</span>
+                    <span className="text-[#00D9FF] font-bold">Fluent</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-3">
                     <div className="bg-[#00D9FF] h-3 rounded-full" style={{width: '95%'}}></div>
@@ -305,17 +305,17 @@ export default function SkillsPage() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-white text-lg font-medium">Cantonese</span>
-                    <span className="text-[#00D9FF] font-bold">Native</span>
+                    <span className="text-[#00D9FF] font-bold">Learning</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-3">
-                    <div className="bg-[#00D9FF] h-3 rounded-full" style={{width: '100%'}}></div>
+                    <div className="bg-[#00D9FF] h-3 rounded-full" style={{width: '40%'}}></div>
                   </div>
                 </div>
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-white text-lg font-medium">Japanese</span>
-                    <span className="text-[#00D9FF] font-bold">Basic</span>
+                    <span className="text-white text-lg font-medium">Teochew</span>
+                    <span className="text-[#00D9FF] font-bold">Learning</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-3">
                     <div className="bg-[#00D9FF] h-3 rounded-full" style={{width: '30%'}}></div>

@@ -23,16 +23,15 @@ export default function Page() {
               <span className="text-[#00D9FF] text-7xl lg:text-8xl">Li</span>
             </h2>
             
-            <div className="flex items-center space-x-4">
-              <span className="text-xl text-gray-300">And I'm a               <span className="inline-block bg-gray-600 text-white px-6 py-2 rounded-full text-base font-semibold shadow">
-                CS STUDENT
+            {/* <div className="flex items-center space-x-4">
+              <span className="text-xl text-gray-300">And I'm a <span className="inline-block bg-gray-600 text-white px-6 py-2 rounded-full text-base font-semibold shadow">
+                CS Master STUDENT
               </span>
               </span>
-            </div>
+            </div> */}
             
             <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
-              CS Master's student at Rice University aspiring to be an AI/ML engineer and software developer. 
-              Experienced in machine learning, data science, and full-stack development.
+              And I'm a CS Master's student at Rice University aspiring to be an AI/ML engineer and software developer. 
             </p>
             
             {/* <button className="bg-[#00D9FF] text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#00B8CC] transition-all duration-300 shadow-lg">
@@ -40,7 +39,7 @@ export default function Page() {
             </button> */}
             
             {/* Social Links */}
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a href="#" className="w-12 h-12 bg-[#1a1a1a] border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D9FF] hover:text-black hover:border-[#00D9FF] transition-all duration-300">
                 <span className="text-lg">📧</span>
               </a>
@@ -50,7 +49,7 @@ export default function Page() {
               <a href="#" className="w-12 h-12 bg-[#1a1a1a] border border-gray-700 rounded-full flex items-center justify-center hover:bg-[#00D9FF] hover:text-black hover:border-[#00D9FF] transition-all duration-300">
                 <span className="text-lg">💼</span>
               </a>
-            </div>
+            </div> */}
           </div>
           
           {/* Right Content - Profile Card */}

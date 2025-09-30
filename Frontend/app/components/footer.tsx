@@ -55,10 +55,10 @@ export default function Footer() {
           <div className="text-center lg:text-left">
             <h3 className="text-xl font-bold text-white mb-2">Personal Information</h3>
             <div className="space-y-1 text-gray-400">
-              <p><strong className="text-white">MOBILE NO:</strong> +1 (XXX) XXX-XXXX</p>
-              <p><strong className="text-white">INSTAGRAM:</strong> @ryan.li</p>
+              <p><strong className="text-white">MOBILE NO:</strong> +1 (346) 404-7839</p>
+              <p><strong className="text-white">INSTAGRAM:</strong> Ryanrc20003</p>
               <p><strong className="text-white">ADDRESS:</strong> Houston, TX</p>
-              <p><strong className="text-white">EMAIL ID:</strong> ryan@rice.edu</p>
+              <p><strong className="text-white">EMAIL ID:</strong> rl182@rice.edu</p>
             </div>
           </div>
           

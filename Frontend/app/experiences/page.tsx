@@ -155,8 +155,8 @@ export default function ExperiencesPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#2a2a2a] p-8 rounded-xl border border-gray-700">
               <div className="text-4xl mb-4">💼</div>
-              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">3+</h3>
-              <p className="text-gray-400">Companies</p>
+              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">4+</h3>
+              <p className="text-gray-400">Different Positions</p>
             </div>
             
             <div className="bg-[#2a2a2a] p-8 rounded-xl border border-gray-700">
@@ -167,8 +167,8 @@ export default function ExperiencesPage() {
             
             <div className="bg-[#2a2a2a] p-8 rounded-xl border border-gray-700">
               <div className="text-4xl mb-4">🚀</div>
-              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">10+</h3>
-              <p className="text-gray-400">Key Projects</p>
+              <h3 className="text-2xl font-bold text-[#00D9FF] mb-2">2+</h3>
+              <p className="text-gray-400">Different Industries</p>
             </div>
           </div>
         </div>
