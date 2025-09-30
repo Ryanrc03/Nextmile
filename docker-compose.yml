@@ -51,6 +51,10 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - EMAIL_USER=${EMAIL_USER:-your-email@gmail.com}
+      - EMAIL_PASS=${EMAIL_PASS:-your-app-password}
     depends_on:
       - chatbot
     networks:
