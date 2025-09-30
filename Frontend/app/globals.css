@@ -2,30 +2,38 @@
 @plugin "@tailwindcss/typography";
 @import "./components/tweet.css";
 
-::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
-}
-
-/* Light theme colors only */
+/* Dark theme variables */
 :root {
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
-  --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
+  --sh-class: #7dd3fc;
+  --sh-identifier: #e2e8f0;
+  --sh-sign: #94a3b8;
+  --sh-string: #10b981;
+  --sh-keyword: #f472b6;
+  --sh-comment: #6b7280;
+  --sh-jsxliterals: #a78bfa;
+  --sh-property: #fb7185;
+  --sh-entity: #fb7185;
+  
+  /* Custom colors */
+  --primary-green: #00ff88;
+  --dark-bg: #0a0a0a;
+  --dark-surface: #1a1a1a;
+  --dark-border: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
 }
 
 html {
   min-width: 360px;
 }
 
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+}
+
 .prose {
-  @apply text-[#000000];
+  @apply text-white;
 }
 
 .prose .anchor {
@@ -139,4 +147,9 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+::selection {
+  background: transparent;
+  color: inherit;
 }

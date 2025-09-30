@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: 'standalone', // 支持 Docker 独立部署
   async rewrites() {
     return [
       {
