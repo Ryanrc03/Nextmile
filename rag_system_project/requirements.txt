@@ -1,0 +1,5 @@
+# List of dependencies for the RAG system project
+pandas
+numpy
+openai
+openpyxl
