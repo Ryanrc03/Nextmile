@@ -36,6 +36,11 @@ def chunk_resume_documents(pages, chunk_size=1000, chunk_overlap=200):
         separators=["\n\n", "\n", " ", ""],  # Prioritize paragraphs, then lines, etc.
     )
     chunks = text_splitter.split_documents(pages)
+    # 为每个chunk添加唯一id
+    for i, chunk in enumerate(chunks):
+        if not hasattr(chunk, "metadata") or chunk.metadata is None:
+            chunk.metadata = {}
+        chunk.metadata["id"] = i
     return chunks
 
 def embed_chunks(chunks):
