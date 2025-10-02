@@ -1,4 +1,4 @@
-# 使用官方 Python 镜像
+# LangChain RAG Chatbot Dockerfile
 FROM python:3.10-slim
 
 # 设置工作目录
@@ -9,22 +9,22 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# 复制依赖文件
+# 复制 requirements.txt
 COPY chatbot/requirements.txt /app/requirements.txt
 
-# 安装依赖
+# 安装 Python 依赖
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 复制应用代码
 COPY chatbot/ /app/chatbot/
-COPY RAG_algotirhm/ /app/RAG_algotirhm/
+COPY RAG_algotirhm/rag_core/LangChainRag/ /app/RAG_algotirhm/rag_core/LangChainRag/
 
 # 设置环境变量
 ENV PYTHONPATH=/app:/app/chatbot:/app/RAG_algotirhm/rag_core/LangChainRag
 ENV PYTHONUNBUFFERED=1
 
-# 暴露应用端口
+# 暴露端口
 EXPOSE 8000
 
-# 启动命令 - 使用新的 LangChain API 服务器
+# 启动命令
 CMD ["python", "/app/chatbot/api_server_langchain.py"]

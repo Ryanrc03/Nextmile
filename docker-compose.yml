@@ -33,13 +33,20 @@ services:
       - nextmile_network
 
   chatbot:
-    build: ./chatbot
-    container_name: nextmile_chatbot
+    build: 
+      context: .
+      dockerfile: chatbot/Dockerfile
+    container_name: nextmile_chatbot_langchain
     restart: unless-stopped
     ports:
       - "8000:8000"
     environment:
       - MONGODB_URI=mongodb://admin:password@mongodb:27017/nextmile_chatbot?authSource=admin
+      - PYTHONPATH=/app:/app/chatbot:/app/RAG_algotirhm/rag_core/LangChainRag
+    volumes:
+      - ./chatbot:/app/chatbot
+      - ./RAG_algotirhm:/app/RAG_algotirhm
+      - chroma_data:/app/RAG_algotirhm/rag_core/LangChainRag/docs/chroma
     depends_on:
       - mongodb
     networks:
@@ -62,6 +69,7 @@ services:
 
 volumes:
   mongodb_data:
+  chroma_data:
 
 networks:
   nextmile_network:

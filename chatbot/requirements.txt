@@ -7,3 +7,12 @@ pydantic
 python-dotenv
 pymongo>=4.5.0
 motor>=3.3.1
+openpyxl
+
+# LangChain RAG 依赖
+langchain
+langchain-community
+sentence-transformers
+chromadb
+pypdf
+scikit-learn

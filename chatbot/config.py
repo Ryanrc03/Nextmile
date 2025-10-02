@@ -34,6 +34,7 @@ LOGGING_CONFIG = {
 API_CONFIG = {
     "host": "0.0.0.0",
     "port": 8000,
+    "log_level": "info",
     "cors_origins": ["*"],
     "cors_credentials": True,
     "cors_methods": ["*"],

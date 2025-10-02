@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # MongoDB 数据库
+  mongodb:
+    image: mongo:6.0
+    container_name: nextmile-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: nextmile2024
+      MONGO_INITDB_DATABASE: nextmile_chatbot
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - nextmile-network
+
+  # LangChain RAG Chatbot API
+  chatbot-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.langchain
+    container_name: nextmile-chatbot-langchain
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://admin:nextmile2024@mongodb:27017/
+      - MONGODB_DB=nextmile_chatbot
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - mongodb
+    volumes:
+      - ./chatbot:/app/chatbot
+      - ./RAG_algotirhm/rag_core/LangChainRag:/app/RAG_algotirhm/rag_core/LangChainRag
+      - chroma_data:/app/RAG_algotirhm/rag_core/LangChainRag/docs/chroma
+    networks:
+      - nextmile-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  mongodb_data:
+    driver: local
+  chroma_data:
+    driver: local
+
+networks:
+  nextmile-network:
+    driver: bridge
