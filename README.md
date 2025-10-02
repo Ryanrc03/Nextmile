@@ -18,8 +18,9 @@ Open-Source & Community-Driven: Join a transparent, continuously improving platf
 ## 💻 Tech Stack  
 Nextmile is built on a modern, robust foundation, ensuring a seamless and high-performance user experience.  
 
-- **Frontend:** React, Next.js  
-- **Backend:** Node.js  
-- **Database:** MongoDB  
-- **AI/ML:** Python  
+- **Frontend:** React, Next.js, Tailwind CSS  
+- **Backend:** FastAPI (Python), Node.js  
+- **Database:** MongoDB, ChromaDB  
+- **AI/ML:** Python (LangChain, Huggingface Transformers, sentence-transformers)  
+- **DevOps:** Docker, Docker Compose
 
