@@ -2,12 +2,13 @@ import Link from "next/link";
 import { metaData } from "../lib/config";
 
 const navItems = {
-  "/": { name: "HOME" },
-  "/about": { name: "ABOUT" },
-  "/education": { name: "EDUCATION" },
-  "/experiences": { name: "EXPERIENCES" },
-  "/skills": { name: "SKILLS" },
-  "/contact": { name: "CONTACT ME" }
+  "/": { name: "NEXTMILE" },
+  "/ryan": { name: "RYAN'S PORTFOLIO" },
+  "/ryan/about": { name: "ABOUT" },
+  "/ryan/education": { name: "EDUCATION" },
+  "/ryan/experiences": { name: "EXPERIENCES" },
+  "/ryan/skills": { name: "SKILLS" },
+  "/ryan/contact": { name: "CONTACT" }
 };
 
 export function Navbar() {

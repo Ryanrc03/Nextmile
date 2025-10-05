@@ -1,10 +1,10 @@
 export const metaData = {
-  baseUrl: "https://nextmile-template.vercel.app/",
-  title: "Nextmile",
-  name: "Ryan",
+  baseUrl: "https://nextmile.space/",
+  title: "NextMile - AI-Powered Career Assistant",
+  name: "NextMile",
   ogImage: "/opengraph-image.png",
   description:
-    "A clean, fast, and lightweight portfolio template built with Next.js, Vercel, and Tailwind CSS for optimal performance.",
+    "An innovative open-source resume platform powered by AI. Create personal portfolio pages, interactive resumes, and get personalized career advice from your AI digital twin.",
 };
 
 export const socialLinks = {
