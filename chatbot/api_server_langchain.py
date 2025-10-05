@@ -212,10 +212,8 @@ async def chat(message: Message):
                 bot_response=rag_result['answer'],
                 session_id=session_id,
                 user_id=message.user_id,
-                metadata={
-                    "retrieved_count": rag_result['retrieved_count'],
-                    "rag_system": "langchain"
-                }
+                response_time=total_response_time,
+                model_used="langchain"
             )
             logger.info(f"对话已保存: conversation_id={conversation_id}")
         except Exception as e:
