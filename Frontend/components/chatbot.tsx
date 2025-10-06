@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false); // 默认收起状态
   const [messages, setMessages] = useState<string[]>([]);
   const [input, setInput] = useState("");
+  const [size, setSize] = useState({ width: 350, height: 450 }); // 默认大小
+  const [isResizing, setIsResizing] = useState(false);
+  const chatboxRef = useRef<HTMLDivElement>(null);
 
   const handleSend = async () => {
     if (input.trim()) {
@@ -50,13 +53,54 @@ export default function Chatbot() {
     }
   };
 
+  // 处理调整大小
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
+    
+    const startX = e.clientX;
+    const startY = e.clientY;
+    const startWidth = size.width;
+    const startHeight = size.height;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const deltaX = startX - e.clientX;
+      const deltaY = startY - e.clientY;
+      
+      const newWidth = Math.max(300, Math.min(600, startWidth + deltaX));
+      const newHeight = Math.max(400, Math.min(700, startHeight + deltaY));
+      
+      setSize({ width: newWidth, height: newHeight });
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  };
+
   return (
     <div
       className="fixed bottom-6 right-6 z-50"
     >
       {isOpen ? (
-        <div className="bg-[#1a1a1a] border border-gray-700 text-white rounded-2xl shadow-2xl backdrop-blur-sm"
-             style={{ width: "350px", height: "450px" }}>
+        <div 
+          ref={chatboxRef}
+          className={`bg-[#1a1a1a] border border-gray-700 text-white rounded-2xl shadow-2xl backdrop-blur-sm relative ${isResizing ? 'select-none' : ''}`}
+          style={{ width: `${size.width}px`, height: `${size.height}px` }}>
+          
+          {/* Resize Handle - 左上角 */}
+          <div
+            onMouseDown={handleMouseDown}
+            className="absolute -top-1 -left-1 w-8 h-8 cursor-nw-resize group z-10"
+            title="拖拽调整大小"
+          >
+            <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#00D9FF] opacity-50 group-hover:opacity-100 transition-opacity"></div>
+          </div>
           
           {/* Header */}
           <div className="flex justify-between items-center p-4 border-b border-gray-700">
@@ -77,7 +121,10 @@ export default function Chatbot() {
           </div>
 
           {/* Messages */}
-          <div className="h-80 overflow-y-auto p-4 space-y-3 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
+          <div 
+            className="overflow-y-auto p-4 space-y-3 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent"
+            style={{ height: `${size.height - 140}px` }}
+          >
             {messages.length === 0 ? (
               <div className="text-center text-gray-400 mt-8">
                 <div className="text-4xl mb-2">👋</div>

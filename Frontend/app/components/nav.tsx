@@ -2,7 +2,7 @@ import Link from "next/link";
 import { metaData } from "../lib/config";
 
 const navItems = {
-  "/": { name: "NEXTMILE" },
+  "/": { name: "homepage" },
   "/ryan": { name: "RYAN'S PORTFOLIO" },
   "/ryan/about": { name: "ABOUT" },
   "/ryan/education": { name: "EDUCATION" },
@@ -19,7 +19,7 @@ export function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold text-white hover:text-[#00D9FF] transition-colors">
-              Portfolio
+              NEXTMILE
             </Link>
           </div>
           

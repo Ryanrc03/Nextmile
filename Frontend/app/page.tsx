@@ -15,8 +15,8 @@ export default function Page() {
               <Image
                 src="/logo.png"
                 alt="NextMile Logo"
-                width={120}
-                height={120}
+                width={200}
+                height={200}
                 className="rounded-2xl shadow-2xl"
                 priority
               />
@@ -42,17 +42,17 @@ export default function Page() {
             <div className="flex flex-wrap justify-center gap-4 pt-8">
               <Link
                 href="/ryan"
-                className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg"
               >
-                View Demo Portfolio
+                Try Live Demo
               </Link>
               <a
                 href="https://github.com/Ryanrc03/Nextmile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 border border-gray-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-700 transition-all duration-300 shadow-lg"
+                className="bg-gray-800 border border-gray-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-700 transition-all duration-300"
               >
-                View on GitHub
+                ⭐ Star on GitHub
               </a>
             </div>
           </div>
