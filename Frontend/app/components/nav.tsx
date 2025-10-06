@@ -2,7 +2,7 @@ import Link from "next/link";
 import { metaData } from "../lib/config";
 
 const navItems = {
-  "/": { name: "homepage" },
+  "/": { name: "HOMEPAGE" },
   "/ryan": { name: "RYAN'S PORTFOLIO" },
   "/ryan/about": { name: "ABOUT" },
   "/ryan/education": { name: "EDUCATION" },

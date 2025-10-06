@@ -5,7 +5,12 @@ export async function POST(request: NextRequest) {
   try {
     const { firstName, lastName, mobNo, emailId, message } = await request.json();
 
+    console.log('=== Contact Form Submission ===');
     console.log('Contact form submission:', { firstName, lastName, emailId, mobNo, message: message.substring(0, 50) + '...' });
+    console.log('Environment check:');
+    console.log('- EMAIL_USER:', process.env.EMAIL_USER ? 'SET' : 'NOT SET');
+    console.log('- EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET (length: ' + process.env.EMAIL_PASS.length + ')' : 'NOT SET');
+    console.log('- NODE_ENV:', process.env.NODE_ENV);
 
     // 验证必填字段
     if (!firstName || !lastName || !emailId || !message) {
@@ -18,9 +23,10 @@ export async function POST(request: NextRequest) {
 
     // 检查环境变量
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.log('Missing email configuration');
+      console.error('ERROR: Email configuration not found!');
+      console.error('Available env vars:', Object.keys(process.env).filter(k => k.includes('EMAIL')));
       return NextResponse.json(
-        { error: 'Email configuration not found' },
+        { error: 'Email configuration not found. Please contact the administrator.' },
         { status: 500 }
       );
     }

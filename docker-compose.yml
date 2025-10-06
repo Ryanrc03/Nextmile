@@ -60,6 +60,10 @@ services:
       - NODE_ENV=production
       - EMAIL_USER=${EMAIL_USER:-your-email@gmail.com}
       - EMAIL_PASS=${EMAIL_PASS:-your-app-password}
+      - HOSTNAME=0.0.0.0
+      - PORT=3000
+    env_file:
+      - .env
     depends_on:
       - chatbot
     networks:

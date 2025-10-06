@@ -19,10 +19,11 @@ FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# 创建 .env.local 的示例文件 (生产环境需要正确配置)
-RUN echo "# Email Configuration" > .env.local && \
-    echo "EMAIL_USER=your-email@gmail.com" >> .env.local && \
-    echo "EMAIL_PASS=your-app-password" >> .env.local
+# 设置构建时的环境变量（占位符）
+ARG EMAIL_USER=placeholder
+ARG EMAIL_PASS=placeholder
+ENV EMAIL_USER=$EMAIL_USER
+ENV EMAIL_PASS=$EMAIL_PASS
 
 # 构建应用
 RUN pnpm build
@@ -42,6 +43,13 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# 复制 package.json 用于运行时依赖
+COPY --from=builder /app/package.json ./package.json
+
+# 复制并设置 entrypoint 脚本
+COPY docker-entrypoint.sh /app/docker-entrypoint.sh
+RUN chmod +x /app/docker-entrypoint.sh && chown nextjs:nodejs /app/docker-entrypoint.sh
+
 # 切换到非root用户
 USER nextjs
 
@@ -51,5 +59,5 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# 启动应用
-CMD ["node", "server.js"]
+# 使用 entrypoint 脚本启动应用
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
