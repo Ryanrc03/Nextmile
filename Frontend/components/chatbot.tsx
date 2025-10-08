@@ -128,8 +128,8 @@ export default function Chatbot() {
             {messages.length === 0 ? (
               <div className="text-center text-gray-400 mt-8">
                 <div className="text-4xl mb-2">👋</div>
-                <p>Hello! I'm your AI assistant.</p>
-                <p className="text-sm">How can I help you today?</p>
+                <p>Hey! I’m Virtual Ryan 👋</p>
+                <p className="text-sm">Curious about Ryan’s work or background? Just ask!</p>
               </div>
             ) : (
               messages.map((msg, index) => {

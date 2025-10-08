@@ -27,3 +27,61 @@ Nextmile is built on a modern, robust foundation, ensuring a seamless and high-p
 - **AI/ML:** Python (LangChain, Huggingface Transformers, sentence-transformers)  
 - **DevOps:** Docker, Docker Compose
 
+## 🚀 Deployment
+
+### Quick Deployment (Recommended)
+
+Deploy to a new AWS EC2 server in one command:
+
+```bash
+git clone https://github.com/Ryanrc03/Nextmile.git
+cd Nextmile
+./scripts/deploy_to_new_server.sh --domain your-domain.com --email your-email@example.com
+```
+
+That's it! The script will automatically:
+- ✅ Install all dependencies (Node.js, Python, Docker, Nginx, etc.)
+- ✅ Configure environment variables
+- ✅ Build the project
+- ✅ Set up Nginx and SSL certificates
+- ✅ Start all services
+- ✅ Verify the deployment
+
+### Migration from Old Server
+
+Migrating from an existing server? Follow these steps:
+
+1. **Backup old server** (run on old server):
+   ```bash
+   ./scripts/backup_before_migration.sh
+   ```
+
+2. **Deploy to new server**:
+   ```bash
+   ./scripts/deploy_to_new_server.sh --domain your-domain.com --email your-email@example.com
+   ```
+
+3. **Migrate data** (run on new server):
+   ```bash
+   ./scripts/migrate_data.sh --from old-server-ip --ssh-key ~/.ssh/key.pem
+   ```
+
+### Documentation
+
+- 📖 [Deployment Scripts Guide](./DEPLOYMENT_SCRIPTS_GUIDE.md) - Detailed script usage
+- 📖 [Migration Guide](./MIGRATION_GUIDE.md) - Complete manual deployment steps
+- 📖 [Quick Reference](./DEPLOYMENT_QUICK_REFERENCE.txt) - Command cheat sheet
+- 📖 [Documentation Index](./DEPLOYMENT_DOCS_INDEX.md) - Overview of all docs
+
+### Available Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `deploy_to_new_server.sh` | One-click automated deployment |
+| `init_new_server.sh` | Initialize server environment |
+| `backup_before_migration.sh` | Backup data from old server |
+| `migrate_data.sh` | Migrate data to new server |
+| `check_deployment.sh` | Check deployment status |
+
+All scripts are located in the `scripts/` directory.
+
