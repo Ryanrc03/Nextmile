@@ -2,6 +2,14 @@
 
 🌐 **Live Demo**: [https://nextmile.space](https://nextmile.space)
 
+🎥 **Video Demo:** [Watch on YouTube](https://www.youtube.com/watch?v=ikDGRWvs6Ag)
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=ikDGRWvs6Ag" target="_blank">
+    <img src="https://img.youtube.com/vi/ikDGRWvs6Ag/0.jpg" width="70%" alt="Nextmile Video Demo"/>
+  </a>
+</p>
+
 Nextmile is an innovative open-source resume platform powered by AI. It provides a range of services for job seekers, including personal portfolio pages, interactive resume displays, and a digital twin (RAG) assistant to help them stand out from the crowd.
 
 <center>
