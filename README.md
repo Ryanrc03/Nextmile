@@ -1,6 +1,8 @@
 # Nextmile(V1): Your AI-Powered Career Assistant 🚀
 
-🌐 **Live Demo**: [https://nextmile.space](https://nextmile.space)
+🌐 **Live Demo**: [https://nextmile.space](https://nextmile.space)  
+> <span style="color:red;">(Currently unavailable — AWS billing issue, redeploying soon 🚀)</span>
+
 
 🎥 **Video Demo:** [Watch on YouTube](https://www.youtube.com/watch?v=ikDGRWvs6Ag)
 
